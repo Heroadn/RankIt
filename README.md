@@ -1,29 +1,36 @@
-# SFML + ECS - Poker Hand Ranking
-A Simple poker hand ranking, built with C++ and SFML + entt.
-
-#
-![teste_ahjdhkadad](https://github.com/Heroadn/SFML-Cards/assets/36571620/e29880c8-0e64-46db-a435-2e9802d6e412)
+# RankIt
+A Simple Poker hand Ranking lib
 
 
-# Credits
-- 1-Bit Icons Part-II,  by Piiixl, licensed under CC BY 4.0
-https://piiixl.itch.io/1-bit-icons-part-2
-https://creativecommons.org/licenses/by-nd/4.0/deed.en
 
-- The image of the Bat, by Jetrel 
-https://opengameart.org/content/castle-platformer.
+ ```
+std::vector<Card> straight = {
+    {Suit::HEART, Rank::TEN},
+    {Suit::CLUBS, Rank::NINE},
+    {Suit::DIAMONDS, Rank::EIGHT},
+    {Suit::SPADES, Rank::SEVEN},
+    {Suit::HEART, Rank::SIX}
+};
 
-- Keys, by Gerald 
-https://gerald-burke.itch.io/geralds-keys
+std::vector<Card> straightFlush = {
+    {Suit::HEART, Rank::TEN},
+    {Suit::HEART, Rank::NINE},
+    {Suit::HEART, Rank::EIGHT},
+    {Suit::HEART, Rank::SEVEN},
+    {Suit::HEART, Rank::SIX}
+};
 
-- NotJamFontPack, by  Not Jam
-https://not-jam.itch.io/not-jam-font-pack
+std::vector<Card> test1 = {
+    {Suit::SPADES, Rank::ACE},
+    {Suit::SPADES, Rank::KING},
+    {Suit::SPADES, Rank::QUEEN},
+    {Suit::SPADES, Rank::JACK},
+    {Suit::SPADES, Rank::TEN}
+};
 
-- Cards Pixel Art, by KabGames 
-https://kaboff.itch.io/cards-pixel-art-pack-64x96
+// Printing Straight Flush and its cards
+Ranking::print(straightFlush);
 
-# Building
-Dont forget to install sfml so the cmake find_package can find it 
-
-```cmake --build build```
-
+// Printing Test1
+std::cout << Ranking::toString(Ranking::ranking(test1)) << std::endl;
+ ```
